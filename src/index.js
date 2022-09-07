@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import CreateQuiz from "./CreateQuiz";
-import LandingPage from "./LandingPage";
+
+import MainPage from "./MainPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<CreateQuiz />);
+root.render(<MainPage></MainPage>);

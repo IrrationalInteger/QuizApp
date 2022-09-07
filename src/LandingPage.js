@@ -1,15 +1,23 @@
 import { useState, useEffect } from "react";
-import Header from "./Header";
+import Header from "./Components/Header";
+import { useNavigate } from "react-router-dom";
 
-function LandingPage() {
-  let loggedIn = false;
+function LandingPage(props) {
+  function handleClick1(e) {
+    navigate("./CreateQuiz");
+  }
+  function handleClick2(e) {
+    navigate("./TakeQuiz");
+  }
+  const navigate = useNavigate();
+
   return (
     <div>
-      <Header loggedIn={loggedIn}></Header>
+      <Header></Header>
       <div>
         <div>Monolithic Quizzes</div>
-        <button>Create Quiz</button>
-        <button>Take Quiz</button>
+        <button onClick={handleClick1}>Create Quiz</button>
+        <button onClick={handleClick2}>Take Quiz</button>
       </div>
     </div>
   );
