@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "./Components/Header";
 import Submit from "./Components/Submit";
 import InputBox from "./Components/InputBox";
+import Footer from "./Components/Footer";
 function CreateQuiz() {
   let quiz;
   function setQuiz(q) {
@@ -25,10 +26,16 @@ function CreateQuiz() {
     public: true,
     private: false,
   };
+
+  let height2 = (2 / 100) * window.screen.height;
+  let height1 = window.innerHeight - height2 - (6 / 100) * window.screen.height;
   return (
     <div>
       <Header></Header>
-      <div>
+      <div
+        class="card w-75 text-center  justify-content-center"
+        style={{ margin: "auto", width: "50%", height: height1 }}
+      >
         <InputBox
           op={0}
           tracker={tracker}
@@ -70,6 +77,7 @@ function CreateQuiz() {
         </div>
         <Submit tracker={tracker} setQuiz={setQuiz}></Submit>
       </div>
+      <Footer></Footer>
     </div>
   );
 }
