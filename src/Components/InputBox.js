@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-
+import { Form } from "react-bootstrap";
+import "../styles.css";
 function Header(props) {
   const [topicEmpty, setTopicEmpty] = useState();
   function handleInput(e) {
@@ -10,7 +11,7 @@ function Header(props) {
       }
     }
     if (e.currentTarget.value === "") {
-      setTopicEmpty("You can't leave this field empty!");
+      setTopicEmpty(" You can't leave this field empty!");
     } else setTopicEmpty();
     switch (props.op) {
       case 0:
@@ -31,12 +32,25 @@ function Header(props) {
   }
   if (props.op === 2) {
     return (
-      <div>
-        <p>{props.text}</p>
+      <div
+        style={{
+          display: "-webkit-flex",
+          display: "-ms-flexbox",
+          display: "flex",
+          WebkitFlexWrap: "wrap",
+          margin: "40px",
+          marginTop: "20px",
+          flexWrap: "wrap",
+        }}
+      >
+        <div class="text-center">
+          <p style={{ fontSize: "90%" }}>{props.text}</p>
+        </div>
         <textarea
+          class="form-control"
           onInput={handleInput}
           style={{
-            width: "600px",
+            width: "100%",
             height: "200px",
             textAlign: "left",
             resize: "none",
@@ -46,8 +60,22 @@ function Header(props) {
     );
   }
   return (
-    <div>
-      <p>{props.text}</p>
+    <div
+      style={{
+        display: "-webkit-flex",
+        display: "-ms-flexbox",
+        display: "flex",
+        WebkitFlexWrap: "wrap",
+        marginLeft: "40px",
+        marginBottom: "20px",
+        marginTop: "20px",
+
+        flexWrap: "wrap",
+      }}
+    >
+      <div class="text-center">
+        <p style={{ fontSize: "90%", lineHeight: "100%" }}>{props.text}</p>
+      </div>
       <input
         type={props.type}
         onInput={handleInput}
@@ -61,7 +89,18 @@ function Header(props) {
             : {}
         }
       ></input>
-      <p style={{ color: "red" }}>{topicEmpty} </p>
+      <div class="text-center">
+        <p
+          style={{
+            fontSize: "90%",
+            lineHeight: "100%",
+            color: "red",
+            marginLeft: "5px",
+          }}
+        >
+          {topicEmpty}
+        </p>
+      </div>
     </div>
   );
 }

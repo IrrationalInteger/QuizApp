@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import "../styles.css";
 function Submit(props) {
   const [topicEmpty, setTopicEmpty] = useState();
   function handleClick(e) {
@@ -28,8 +28,10 @@ function Submit(props) {
   }
   return (
     <div>
-      <button onClick={handleClick}>Start</button>
-      <p style={{ color: "red" }}>{topicEmpty} </p>
+      <button onClick={handleClick} style={{ margin: "20px" }}>
+        Start
+      </button>
+      <p style={{ color: "red", fontSize: "100%" }}>{topicEmpty} </p>
     </div>
   );
 }
