@@ -77,17 +77,16 @@ function Header(props) {
         <p style={{ fontSize: "90%", lineHeight: "100%" }}>{props.text}</p>
       </div>
       <input
+        class="form-control"
         type={props.type}
         onInput={handleInput}
         onBlur={handleInput}
         max={props.max}
         min={props.min}
+        style={{
+          width: "95%",
+        }}
         defaultValue={props.type === "number" ? props.default : null}
-        style={
-          props.desc
-            ? { width: "600px", height: "200px", textAlign: "left" }
-            : {}
-        }
       ></input>
       <div class="text-center">
         <p

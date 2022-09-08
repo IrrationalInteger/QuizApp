@@ -36,6 +36,17 @@ function CreateQuiz() {
         class="card w-50 text-center  justify-content-center"
         style={{ margin: "auto", width: "50%" }}
       >
+        <div class="text-center">
+          <p
+            style={{
+              fontSize: "200%",
+              marginTop: "50px",
+              lineHeight: "200%",
+            }}
+          >
+            <strong>Create a new Quiz</strong>
+          </p>
+        </div>
         <InputBox
           op={0}
           tracker={tracker}
