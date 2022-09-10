@@ -11,7 +11,7 @@ function Header(props) {
       }
     }
     if (e.currentTarget.value === "") {
-      setTopicEmpty(" You can't leave this field empty!");
+      setTopicEmpty("You can't leave this field empty!");
     } else setTopicEmpty();
     switch (props.op) {
       case 0:
