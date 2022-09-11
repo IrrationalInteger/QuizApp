@@ -64,11 +64,13 @@ p {
   height: 50px;
   border-radius: 25px;
   border: none;
+  overflow: hidden;
 }
 
 .search {
   float: right;
   margin: 7px;
+  overflow: hidden;
 }
 
 .search button {
@@ -80,4 +82,19 @@ p {
   font-size: 12px;
   border: none;
   cursor: pointer;
+  overflow: hidden;
+}
+.box {
+  text-align: left;
+  border: black ridge 1px;
+  border-radius: 10px;
+  margin: 3px;
+  width: 20rem;
+  padding-left: 10px;
+}
+.searchBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

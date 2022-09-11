@@ -43,11 +43,11 @@ function Header(props) {
           flexWrap: "wrap",
         }}
       >
-        <div class="text-center">
+        <div className="text-center">
           <p style={{ fontSize: "90%" }}>{props.text}</p>
         </div>
         <textarea
-          class="form-control"
+          className="form-control"
           onInput={handleInput}
           style={{
             width: "100%",
@@ -73,11 +73,11 @@ function Header(props) {
         flexWrap: "wrap",
       }}
     >
-      <div class="text-center">
+      <div className="text-center">
         <p style={{ fontSize: "90%", lineHeight: "100%" }}>{props.text}</p>
       </div>
       <input
-        class="form-control"
+        className="form-control"
         type={props.type}
         onInput={handleInput}
         onBlur={handleInput}
@@ -88,7 +88,7 @@ function Header(props) {
         }}
         defaultValue={props.type === "number" ? props.default : null}
       ></input>
-      <div class="text-center">
+      <div className="text-center">
         <p
           style={{
             fontSize: "90%",

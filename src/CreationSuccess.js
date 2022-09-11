@@ -17,7 +17,7 @@ function CreationSuccess() {
   }
 
   return (
-    <GeneralLook class="75" width="70%" height={height1}>
+    <GeneralLook className="75" width="70%" height={height1}>
       <div style={{ width: "auto", height: "100vh" }}>
         <img
           src="https://cdn-icons-png.flaticon.com/512/463/463574.png"

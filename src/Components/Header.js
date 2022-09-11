@@ -1,5 +1,5 @@
 import "../styles.css";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -24,11 +24,18 @@ function Header(props) {
   function toLandingPage() {
     navigate("/", { replace: true });
   }
-  function toSearchResults() {
-    navigate("../SearchResults", { query: input.current.value });
+  function toSearchResults(event) {
+    event.preventDefault();
+    navigate("../SearchResults", { state: { query: input.current.value } });
   }
+  function prevent(e) {
+    e.preventDefault();
+  }
+
   return (
-    <div style={{ backgroundColor: "black", height: height }}>
+    <div
+      style={{ backgroundColor: "black", height: height, overflow: "hidden" }}
+    >
       <button
         src="Logo.png"
         alt=""
@@ -38,39 +45,38 @@ function Header(props) {
 
       {props.isLoggedIn && (
         <>
-          <button class="niceButton" onClick={toProfile}>
+          <button className="niceButton" onClick={toProfile}>
             View Profile
           </button>
-          <button class="niceButton" onClick={toDefault}>
+          <button className="niceButton" onClick={toDefault}>
             Sign out
           </button>
         </>
       )}
       {(!props.isLoggedIn || props.isLoggedIn === null) && (
         <>
-          <button class="niceButton" onClick={toSignUp}>
+          <button className="niceButton" onClick={toSignUp}>
             Sign Up
           </button>
-          <button class="niceButton" onClick={toSignIn}>
+          <button className="niceButton" onClick={toSignIn}>
             Sign In
           </button>
         </>
       )}
-      <div class="search">
+      <div className="search">
         <form action="#">
           <input
             ref={input}
             type="text"
             placeholder=" Search Quizzes"
             name="search"
+            onClick={prevent}
           />
-          <button>
-            <i
-              class="fa fa-search"
-              style={{ fontSize: "18px" }}
-              onClick={toSearchResults}
-            ></i>
-          </button>
+          <button
+            className="fa fa-search"
+            style={{ fontSize: "18px" }}
+            onClick={toSearchResults}
+          ></button>
         </form>
       </div>
     </div>
