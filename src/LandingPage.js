@@ -1,8 +1,7 @@
-import Header from "./Components/Header";
 import { useNavigate } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from "./Components/Footer";
+import GeneralLook from "./Components/GeneralLook";
 function LandingPage(props) {
   function handleClick1(e) {
     navigate("./CreateQuiz");
@@ -15,12 +14,7 @@ function LandingPage(props) {
   let height1 = window.innerHeight - height2 - (6 / 100) * window.screen.height;
   return (
     <div style={{ height: "100vh" }}>
-      <Header></Header>
-
-      <div
-        class="card w-75 text-center  justify-content-center"
-        style={{ margin: "auto", width: "50%", height: height1 }}
-      >
+      <GeneralLook class="75" width="50%" height={height1}>
         <Card.Body class="justify-content-center">
           <Card.Title style={{ fontSize: "75px" }}>
             Monolithic Quizzes
@@ -40,8 +34,7 @@ function LandingPage(props) {
             Create Quiz
           </Button>
         </Card.Body>
-      </div>
-      <Footer></Footer>
+      </GeneralLook>
     </div>
   );
 }
