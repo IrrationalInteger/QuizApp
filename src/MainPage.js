@@ -13,7 +13,6 @@ function MainPage() {
         <Route path="/CreateQuiz" element={<CreateQuiz />} />
       </Routes>
     </BrowserRouter>
-    //we will finish soon 
   );
 }
 

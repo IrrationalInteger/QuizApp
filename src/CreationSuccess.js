@@ -39,7 +39,7 @@ function CreationSuccess() {
         <a href="https://i.imgflip.com/2eaqtx.jpg">
           https://www.myQuizApp.com/Quizzes/Quiz212
         </a>
-        <Button variant="light" onClick={copy} style={{ marginLeft: "20px" }}>
+        <Button variant="primary" onClick={copy} style={{ marginLeft: "20px" }}>
           copy link
         </Button>
         <div style={{ marginTop: "100px" }}>
