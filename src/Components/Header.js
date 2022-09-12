@@ -1,18 +1,20 @@
 import "../styles.css";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Popup from "./Popup.js";
+import { useAppContext } from "../lib/contextLib";
+
 function Header(props) {
+  const { userHasAuthenticated, isAuthenticated } = useAppContext();
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
-
   let height = (6 / 100) * window.screen.height;
   const navigate = useNavigate();
   const input = useRef(null);
   const location = useLocation();
   function toDefault() {
-    //terminate the session
+    userHasAuthenticated(false);
     navigate(".." + location.pathname);
   }
   function toProfile() {
@@ -48,7 +50,12 @@ function Header(props) {
       <Popup title="Sign Up" modalShow={show1} close={closer1}>
         <div>Sign Up</div>
       </Popup>
-      <Popup title="Sign In" modalShow={show2} close={closer2}>
+      <Popup
+        title="Sign In"
+        modalShow={show2}
+        close={closer2}
+        userHasAuthenticated={userHasAuthenticated}
+      >
         <div>Sign In</div>
       </Popup>
 
@@ -59,7 +66,7 @@ function Header(props) {
         onClick={toLandingPage}
       />
 
-      {props.isLoggedIn && (
+      {isAuthenticated && (
         <>
           <button className="niceButton" onClick={toProfile}>
             View Profile
@@ -69,7 +76,7 @@ function Header(props) {
           </button>
         </>
       )}
-      {(!props.isLoggedIn || props.isLoggedIn === null) && (
+      {(!isAuthenticated || isAuthenticated === null) && (
         <>
           <button className="niceButton" onClick={toSignUp}>
             Sign Up
