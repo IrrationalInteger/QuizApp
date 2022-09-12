@@ -1,9 +1,12 @@
 import "../styles.css";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
+import Popup from "./Popup.js";
 function Header(props) {
+  const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false);
+
   let height = (6 / 100) * window.screen.height;
   const navigate = useNavigate();
   const input = useRef(null);
@@ -15,11 +18,12 @@ function Header(props) {
   function toProfile() {
     navigate("../Profile");
   }
-  function toSignIn() {
-    navigate("../SignIn");
-  }
+
   function toSignUp() {
-    navigate("../SignUp");
+    setShow1(true);
+  }
+  function toSignIn() {
+    setShow2(true);
   }
   function toLandingPage() {
     navigate("/", { replace: true });
@@ -31,14 +35,26 @@ function Header(props) {
   function prevent(e) {
     e.preventDefault();
   }
-
+  function closer1() {
+    setShow1(false);
+  }
+  function closer2() {
+    setShow2(false);
+  }
   return (
     <div
       style={{ backgroundColor: "black", height: height, overflow: "hidden" }}
     >
-      <button
+      <Popup title="Sign Up" modalShow={show1} close={closer1}>
+        <div>Sign Up</div>
+      </Popup>
+      <Popup title="Sign In" modalShow={show2} close={closer2}>
+        <div>Sign In</div>
+      </Popup>
+
+      <input
+        type="image"
         src="Logo.png"
-        alt=""
         style={{ height: "100%" }}
         onClick={toLandingPage}
       />

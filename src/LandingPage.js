@@ -14,8 +14,8 @@ function LandingPage(props) {
   let height1 = window.innerHeight - height2 - (6 / 100) * window.screen.height;
   return (
     <div style={{ height: "100vh" }}>
-      <GeneralLook className="75" width="50%" height={height1}>
-        <Card.Body className="justify-content-center">
+      <GeneralLook cl="75" width="50%" height={height1}>
+        <div>
           <Card.Title style={{ fontSize: "75px" }}>
             Monolithic Quizzes
           </Card.Title>
@@ -33,7 +33,7 @@ function LandingPage(props) {
           >
             Create Quiz
           </Button>
-        </Card.Body>
+        </div>
       </GeneralLook>
     </div>
   );

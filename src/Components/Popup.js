@@ -5,6 +5,7 @@ function Popup(props) {
 
   return (
     <Modal
+      onHide={props.close}
       show={props.modalShow}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"

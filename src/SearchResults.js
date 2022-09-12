@@ -7,11 +7,10 @@ import "./styles.css";
 function SearchResults() {
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location);
   const query = location.state.query;
 
   return (
-    <GeneralLook className="75 searchBox" width="50%">
+    <GeneralLook className="75 searchBox " width="50%">
       {Data.filter((post) => {
         if (query === "") {
           return post;

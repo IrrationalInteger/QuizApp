@@ -4,7 +4,7 @@ import TakeQuiz from "./TakeQuiz";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import SearchResults from "./SearchResults";
-
+import CreationSucces from "./CreationSuccess";
 function MainPage() {
   return (
     <BrowserRouter>
@@ -13,6 +13,7 @@ function MainPage() {
         <Route path="/TakeQuiz" element={<TakeQuiz />} />
         <Route path="/CreateQuiz" element={<CreateQuiz />} />
         <Route path="/SearchResults" element={<SearchResults />} />
+        <Route path="/CreationSuccess" element={<CreationSucces />} />
       </Routes>
     </BrowserRouter>
   );

@@ -28,7 +28,7 @@ function CreateQuiz() {
   let height2 = (2 / 100) * window.screen.height;
   let height1 = window.innerHeight - height2 - (6 / 100) * window.screen.height;
   return (
-    <GeneralLook className={"50"} width={"50%"}>
+    <GeneralLook cl={"50"} width={"50%"}>
       <div className="text-center">
         <p
           style={{
