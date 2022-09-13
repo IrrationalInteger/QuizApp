@@ -42,6 +42,7 @@ function Header(props) {
   }
   function closer2() {
     setShow2(false);
+    userHasAuthenticated(true);
   }
   return (
     <div
@@ -50,12 +51,7 @@ function Header(props) {
       <Popup title="Sign Up" modalShow={show1} close={closer1}>
         <div>Sign Up</div>
       </Popup>
-      <Popup
-        title="Sign In"
-        modalShow={show2}
-        close={closer2}
-        userHasAuthenticated={userHasAuthenticated}
-      >
+      <Popup title="Sign In" modalShow={show2} close={closer2}>
         <div>Sign In</div>
       </Popup>
 

@@ -6,9 +6,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import SearchResults from "./SearchResults";
 import CreationSucces from "./CreationSuccess";
-function MainPage() {
+function App() {
   const [isAuthenticated, userHasAuthenticated] = useState(false);
-
   return (
     <BrowserRouter>
       <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
@@ -24,4 +23,4 @@ function MainPage() {
   );
 }
 
-export default MainPage;
+export default App;

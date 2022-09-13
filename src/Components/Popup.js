@@ -2,10 +2,7 @@ import { Modal, Button } from "react-bootstrap";
 
 function Popup(props) {
   // props-> show(boolean var),title,close function (turns show to false)
-  function clickHandler() {
-    props.close();
-    if (props.title === "Sign In") props.userHasAuthenticated(true);
-  }
+
   return (
     <Modal
       onHide={props.close}
@@ -21,7 +18,7 @@ function Popup(props) {
       </Modal.Header>
       <Modal.Body>{props.children}</Modal.Body>
       <Modal.Footer>
-        <Button onClick={clickHandler}>Close</Button>
+        <Button onClick={props.close}>Close</Button>
       </Modal.Footer>
     </Modal>
   );

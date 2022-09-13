@@ -7,12 +7,11 @@ import "./styles.css";
 function SearchResults() {
   const location = useLocation();
   const navigate = useNavigate();
-  const query = location.state.query;
-
+  let query = location.state !== null ? location.state.query : null;
   return (
     <GeneralLook className="75 searchBox " width="50%">
       {Data.filter((post) => {
-        if (query === "") {
+        if (query === "" || query === null) {
           return post;
         } else if (post.Name.toLowerCase().includes(query.toLowerCase())) {
           return post;
